@@ -57,7 +57,7 @@ module Pod
                    :integrate_targets => false,
                    :deterministic_uuids => false)
 
-          target('packager') do
+          target('packager-krt') do
             inherit! :complete
           end
         end

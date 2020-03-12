@@ -296,7 +296,7 @@ MAP
         lib_flag = lib.chomp('.a').split('/').last
         "-l#{lib_flag}"
       end
-      linker_flags.reject { |e| e == "-l#{@spec.name}" || e == '-lPods-packager' }
+      linker_flags.reject { |e| e == "-l#{@spec.name}" || e == '-lPods-packager-krt' }
     end
 
     def ios_build_options
@@ -311,7 +311,7 @@ MAP
       archs
     end
 
-    def xcodebuild(defines = '', args = '', build_dir = 'build', target = 'Pods-packager', project_root = @static_sandbox_root, config = @config)
+    def xcodebuild(defines = '', args = '', build_dir = 'build', target = 'Pods-packager-krt', project_root = @static_sandbox_root, config = @config)
       if defined?(Pod::DONT_CODESIGN)
         args = "#{args} CODE_SIGN_IDENTITY=\"\" CODE_SIGNING_REQUIRED=NO"
       end
